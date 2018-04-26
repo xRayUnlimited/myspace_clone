@@ -3,6 +3,7 @@ import { Menu } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { handleLogout } from '../actions/auth';
+import Logo from '../components/images/Logo.png';
 
 class NavBar extends Component {
   rightNavs = () => {
@@ -21,10 +22,10 @@ class NavBar extends Component {
     return (
       <Menu.Menu position='right'>
         <Link to='/register'>
-          <Menu.Item name='Register' />
+          <Menu.Item name='Sign Up' />
         </Link>
         <Link to='/login'>
-          <Menu.Item name='Login' />
+          <Menu.Item name='Member Login' />
         </Link>
       </Menu.Menu>
     );
@@ -33,9 +34,10 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        <Menu pointing secondary>
-          <Link to='/'>
-            <Menu.Item name='home' />
+        <Menu pointing secondary >
+        <img className='ui image' src={Logo} alt='home' />
+          <Link to='/' >
+            <Menu.Item name='Rayspace - A Place for Rays' />
           </Link>
           { this.rightNavs() }
         </Menu>
